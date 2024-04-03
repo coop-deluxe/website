@@ -1,25 +1,30 @@
+// Check if user prefers dark theme
 const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-function updateDarkModeButtonText() {
-    const darkButton = document.getElementById("dark");
-    if (document.body.classList.contains("dark")) {
-        darkButton.textContent = "Light Mode";
-    } else {
-        darkButton.textContent = "Dark Mode";
-    }
-}
-
+// Function to toggle dark theme
 function toggleDarkTheme() {
     document.body.classList.toggle("dark");
     localStorage.setItem('prefersDarkTheme', document.body.classList.contains("dark"));
-    updateDarkModeButtonText();
+    updateModeButtonText();
 }
 
+// Function to toggle retro mode
 function toggleRetroMode() {
     document.body.classList.toggle("retro");
     localStorage.setItem('prefersRetro', document.body.classList.contains("retro"));
 }
 
+// Function to update mode button text
+function updateModeButtonText() {
+    const darkModeButton = document.getElementById('dark');
+    if (document.body.classList.contains("dark")) {
+        darkModeButton.textContent = "Light Mode";
+    } else {
+        darkModeButton.textContent = "Dark Mode";
+    }
+}
+
+// Apply saved preferences on page load
 window.addEventListener("load", () => {
     if (localStorage.getItem('prefersDarkTheme') === 'true' || (localStorage.getItem('prefersDarkTheme') === null && prefersDarkTheme.matches)) {
         document.body.classList.add("dark");
@@ -27,8 +32,5 @@ window.addEventListener("load", () => {
     if (localStorage.getItem('prefersRetro') === 'true') {
         document.body.classList.add('retro');
     }
-    updateDarkModeButtonText();
+    updateModeButtonText(); // Update mode button text on page load
 });
-
-document.getElementById("retro").addEventListener("click", toggleRetroMode);
-document.getElementById("dark").addEventListener("click", toggleDarkTheme);
