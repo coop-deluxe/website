@@ -4,14 +4,14 @@ const prefersDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 // Function to toggle dark theme
 function toggleDarkTheme() {
     document.body.classList.toggle("dark");
-    localStorage.setItem('prefersDarkTheme', document.body.classList.contains("dark"));
+    localStorage.setItem('prefersDarkTheme', document.body.classList.contains("dark") ? "true" : "false");
     updateModeButtonText();
 }
 
 // Function to toggle retro mode
 function toggleRetroMode() {
     document.body.classList.toggle("retro");
-    localStorage.setItem('prefersRetro', document.body.classList.contains("retro"));
+    localStorage.setItem('prefersRetro', document.body.classList.contains("retro") ? "true" : "false");
 }
 
 // Function to update mode button text
@@ -34,3 +34,6 @@ window.addEventListener("load", () => {
     }
     updateModeButtonText(); // Update mode button text on page load
 });
+
+// Event listener for the Dark Mode button
+document.getElementById("dark").addEventListener("click", toggleDarkTheme);
