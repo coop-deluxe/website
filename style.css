@@ -93,7 +93,7 @@ body.dark main {
     border-radius: 8px;
 }
 
-body.retro .dx {
+.dx {
     animation: rainbow 2s linear infinite;
 }
 
