@@ -2,37 +2,43 @@
 
 @keyframes bgscroll {
     0% {
-        background-position: top left;
+        background-position: 0vw 120vh, 0vw 240vh;
+    }
+    25% {
+        background-position: 50vw 90vh, 100vw 160vh;
     }
     50% {
-        background-position: bottom right;
+        background-position: 100vw 60vh, 200vw 120vh;
+    }
+    75% {
+        background-position: 150vw 30vh, 300vw 60vh;
     }
     100% {
-        background-position: top left;
+        background-position: 200vw 0vh, 400vw 0vh;
     }
 }
 
 @keyframes rainbow {
     0% {
-        color: #ff0000;
+        color: #ffaaaa;
     }
     16% {
-        color: #dcdc00;
+        color: #fdfd88;
     }
     33% {
-        color: #00ff00;
+        color: #aaffaa;
     }
     50% {
-        color: #00ffff;
+        color: #aaffff;
     }
     67% {
-        color: #0000ff;
+        color: #aaaaff;
     }
     83% {
-        color: #ff00ff;
+        color: #ffaaff;
     }
     100% {
-        color: #ff0000;
+        color: #ffaaaa;
     }
 }
 
@@ -40,9 +46,10 @@ body {
     background: #888888;
     font-family: 'Noto Sans', sans-serif;
     color: #000000;
-    background: url("hats.png") #ffffff fixed repeat top left / 15%;
-    animation: bgscroll 30s linear infinite;
+    background-image: url("hats.png"), url("pattern.png");
+    animation: bgscroll 60s linear infinite;
     text-align: center;
+    border-radius: 8px;
 }
 
 body.dark {
@@ -62,14 +69,28 @@ header {
 header button {
     flex-grow: 1;
     margin: 0 1em;
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 4px 4px #00000044;
+}
+footer button {
+    border: none;
+    outline: none;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 4px 4px #00000044;
 }
 
 main {
     background-color: #ffffffce;
+    border-radius: 8px;
 }
 
 body.dark main {
     background-color: #000000ce;
+    border-radius: 8px;
 }
 
 body.retro .dx {
@@ -77,13 +98,26 @@ body.retro .dx {
 }
 
 .x {
-    color: #ec7731;
+    color: #feaa44;
 }
 
 h1 {
-    color: #ff0000;
+    color: #ff8888;
 }
 
 h2 {
-    color: #0000ff;
+    color: #8888ff;
+}
+
+img {
+    transition-duration: 0.5s;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    box-shadow: 0px 0px 0px 100vw #00000000;
+    border-radius: 8px;
+}
+  
+img:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 0px 100vw #00000088;
 }
