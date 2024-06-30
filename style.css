@@ -97,16 +97,12 @@ body.dark main {
     animation: rainbow 2s linear infinite;
 }
 
-.x {
-    color: #feaa44;
-}
-
 h1 {
-    color: #ff8888;
+    color: #ff3030;
 }
 
 h2 {
-    color: #8888ff;
+    color: #5050ff;
 }
 
 img {
