@@ -43,7 +43,7 @@
 }
 
 body {
-    background: #888888;
+    background: #dcdcdc;
     font-family: 'Noto Sans', sans-serif;
     color: #000000;
     background-image: url("hats.png"), url("pattern.png");
@@ -60,6 +60,10 @@ body.dark {
 h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     font-family: 'Kanit', sans-serif;
+}
+
+button {
+    height: 35px;
 }
 
 header {
@@ -93,8 +97,13 @@ body.dark main {
     border-radius: 8px;
 }
 
+.x {
+    color: #ec7731;
+}
+
 .dx {
     animation: rainbow 2s linear infinite;
+    font-weight: bold;
 }
 
 h1 {
